@@ -29,6 +29,7 @@ public class League {
     }
 
     public static ArrayList<Player> getAvailablePlayers() {
+        Collections.sort(availablePlayers);
         return availablePlayers;
     }
 

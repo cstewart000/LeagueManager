@@ -79,6 +79,11 @@ public class LeagueManager{
                 Prompter.print(League.getReport());
                 showRootMenu();
                 break;
+
+            default:
+                Prompter.print("Invalid entry. Try again");
+                showRootMenu();
+                break;
         }
     }
 
@@ -130,6 +135,11 @@ public class LeagueManager{
             case "r":
                 int selectedPlayer2 = Prompter.printForInt(listTeamPlayers(team));
                 League.getAvailablePlayers().add(team.getPlayers().remove(selectedPlayer2));
+                showTeamMenu(team);
+                break;
+
+            default:
+                Prompter.print("Invalid entry. Try again");
                 showTeamMenu(team);
                 break;
         }

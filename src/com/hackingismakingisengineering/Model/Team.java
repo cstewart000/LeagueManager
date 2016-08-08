@@ -3,6 +3,7 @@ package com.hackingismakingisengineering.Model;
 import com.hackingismakingisengineering.Exceptions.TeamFullException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by helloworld on 24/07/2016.
@@ -15,6 +16,8 @@ public class Team implements Comparable<Team> {
     private ArrayList<Player> players = new ArrayList<>();
 
     public ArrayList<Player> getPlayers() {
+
+        Collections.sort(players);
         return players;
     }
 
@@ -80,7 +83,7 @@ public class Team implements Comparable<Team> {
 
     @Override
     public int compareTo(Team other) {
-        return this.getTeamName().compareTo(other.toString());
+        return this.getTeamName().compareTo(other.getTeamName());
     }
 
 
